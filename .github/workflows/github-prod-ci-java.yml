@@ -17,7 +17,7 @@ on:
 
   workflow_run:
     workflows:
-      - Stg action
+      - Stg Actions
     types:
       - requested
       - completed
