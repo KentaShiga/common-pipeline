@@ -15,6 +15,10 @@ on:
   
   workflow_call:
 
+env:
+  SECRET_CALLER: ${{secrets.CALLER_SECRET}}
+  SECRET_CALLED: ${{secrets.CALLED_SECRET}}
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -38,3 +42,5 @@ jobs:
           echo test, and deploy your project.
           echo "caller_key = ${{ secrets.CALLER_SECRET }}"
           echo "called_key = ${{ secrets.CALLED_SECRET }}"
+          echo "caller_key = ${{ env.SECRET_CALLER }}"
+          echo "called_key = ${{ env.SECRET_CALLED }}"
